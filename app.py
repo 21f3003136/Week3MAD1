@@ -15,7 +15,9 @@ data = pd.read_csv("data.csv")
 def generate_student_html(student_id):
     student_data = data[data['Student id'] == student_id]
     if student_data.empty:
-        return f"<h2>Error: No data found for Student ID {student_id}</h2>"
+        html = "<h2>Wrong Inputs</h2>"
+        html += "<p>Something went wrong</p>"
+        return html
     
     total_marks = student_data[' Marks'].sum()
     html = "<h2>Student Details</h2><table border='1'><tr><th>Student id</th><th>Course id</th><th>Marks</th></tr>"
@@ -30,7 +32,7 @@ def generate_student_html(student_id):
 def generate_course_html(course_id):
     course_data = data[data[' Course id'] == course_id]
     if course_data.empty:
-        return f"<h2>Error: No data found for Course ID {course_id}</h2>"
+        return f"<h2>Something went wrong</h2>"
     
     average_marks = course_data[' Marks'].mean()
     max_marks = course_data[' Marks'].max()
