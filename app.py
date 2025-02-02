@@ -21,7 +21,7 @@ def generate_student_html(student_id):
     html = "<h2>Student Details</h2><table border='1'><tr><th>Student ID</th><th>Course ID</th><th>Marks</th></tr>"
     
     for index, row in student_data.iterrows():
-        html += f"<tr><td>{row['Student ID']}</td><td>{row['Course ID']}</td><td>{row['Marks']}</td></tr>"
+        html += f"<tr><td>{row['Student id']}</td><td>{row[' Course id']}</td><td>{row[' Marks']}</td></tr>"
     
     html += f"<tr><td colspan='2'>Total Marks</td><td>{total_marks}</td></tr></table>"
     return html
