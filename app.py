@@ -18,7 +18,7 @@ def generate_student_html(student_id):
         return f"<h2>Error: No data found for Student ID {student_id}</h2>"
     
     total_marks = student_data[' Marks'].sum()
-    html = "<h2>Student Details</h2><table border='1'><tr><th>Student ID</th><th>Course ID</th><th>Marks</th></tr>"
+    html = "<h2>Student Details</h2><table border='1'><tr><th>Student id</th><th>Course id</th><th>Marks</th></tr>"
     
     for index, row in student_data.iterrows():
         html += f"<tr><td>{row['Student id']}</td><td>{row[' Course id']}</td><td>{row[' Marks']}</td></tr>"
