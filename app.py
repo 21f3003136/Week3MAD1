@@ -13,11 +13,11 @@ data = pd.read_csv("data.csv")
 
 # Function to generate HTML for student details
 def generate_student_html(student_id):
-    student_data = data[data['Student ID'] == student_id]
+    student_data = data[data['Student id'] == student_id]
     if student_data.empty:
         return f"<h2>Error: No data found for Student ID {student_id}</h2>"
     
-    total_marks = student_data['Marks'].sum()
+    total_marks = student_data[' Marks'].sum()
     html = "<h2>Student Details</h2><table border='1'><tr><th>Student ID</th><th>Course ID</th><th>Marks</th></tr>"
     
     for index, row in student_data.iterrows():
@@ -28,16 +28,16 @@ def generate_student_html(student_id):
 
 # Function to generate HTML for course details
 def generate_course_html(course_id):
-    course_data = data[data['Course ID'] == course_id]
+    course_data = data[data[' Course id'] == course_id]
     if course_data.empty:
         return f"<h2>Error: No data found for Course ID {course_id}</h2>"
     
-    average_marks = course_data['Marks'].mean()
-    max_marks = course_data['Marks'].max()
+    average_marks = course_data[' Marks'].mean()
+    max_marks = course_data[' Marks'].max()
     
     # Create histogram
     plt.figure()
-    plt.hist(course_data['Marks'], bins=10, color='blue', alpha=0.7)
+    plt.hist(course_data[' Marks'], bins=10, color='blue', alpha=0.7)
     plt.title(f'Marks Distribution for Course ID {course_id}')
     plt.xlabel('Marks')
     plt.ylabel('Frequency')
