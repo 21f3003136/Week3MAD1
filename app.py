@@ -32,7 +32,9 @@ def generate_student_html(student_id):
 def generate_course_html(course_id):
     course_data = data[data[' Course id'] == course_id]
     if course_data.empty:
-        return f"<h2>Something went wrong</h2>"
+        html = "<h2>Wrong Inputs</h2>"
+        html += "<p>Something went wrong</p>"
+        return html
     
     average_marks = course_data[' Marks'].mean()
     max_marks = course_data[' Marks'].max()
